@@ -107,7 +107,7 @@ function updateElement(el, newVnode, oldVnode, index = 0) {
           removeEventListener(el, name, props[name]);
         }
         else {
-          removeAttribute(el, name);
+          removeAttr(el, name);
         }
       }
     }
@@ -125,13 +125,15 @@ function updateElement(el, newVnode, oldVnode, index = 0) {
   }
 }
 
+// next => create component to isolate rendering
+
 // example
 const app = document.getElementById('app');
 
 // JSX
 const vnode = (
   <div class="container">
-    <h1 style="color:#444">JSX => VDOM => DOM</h1>
+    <h1 style="color:#2c3e50">JSX => VDOM => DOM</h1>
     <img src="profile.png" />
     <p>My sample <strong>text</strong></p>
     <button onClick={(event) => console.log('click', event)}>Clic!</button>
@@ -139,7 +141,7 @@ const vnode = (
       // simulate update
       const newVnode = (
         <div class="container">
-          <h1 style="color:red">JSX => VDOM => DOM</h1>
+          <h1>JSX => VDOM => DOM</h1>
           <p>My sample <strong>text</strong> updated !!</p>
           <p>My new paragraph</p>
           <button onClick={(event) => console.log('click updated', event)}>Clic!</button>

@@ -1,4 +1,8 @@
+# VDOM Demo 
+
 JSX => VDOM => DOM
+
+Or without JSX use a (custom) html parser with templates
 
 ## Installation
 
@@ -22,11 +26,13 @@ npm i babel-cli babel-preset-latest -D
 Example transpile with method "h"
 ```js
 /** @jsx h */
-const node = (
-  <ul className="list">
-    <li>item 1</li>
-    <li>item 2</li>
-  </ul>
+const vnode = (
+  <div class="container">
+    <h1 style="color:#444">JSX => VDOM => DOM</h1>
+    <img src="profile.png" />
+    <p>My sample <strong>text</strong></p>
+    <button onClick={(event) => console.log('click', event)}>Clic!</button>
+  </div>
 );
 ```
 

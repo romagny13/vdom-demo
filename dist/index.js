@@ -112,7 +112,7 @@ function updateElement(el, newVnode, oldVnode) {
         if (isEventProp(name)) {
           removeEventListener(el, name, props[name]);
         } else {
-          removeAttribute(el, name);
+          removeAttr(el, name);
         }
       }
     }
@@ -134,7 +134,7 @@ var vnode = h(
   { 'class': 'container' },
   h(
     'h1',
-    { style: 'color:#444' },
+    { style: 'color:#2c3e50' },
     'JSX => VDOM => DOM'
   ),
   h('img', { src: 'profile.png' }),
@@ -164,7 +164,7 @@ var vnode = h(
           { 'class': 'container' },
           h(
             'h1',
-            { style: 'color:red' },
+            null,
             'JSX => VDOM => DOM'
           ),
           h(
@@ -192,9 +192,9 @@ var vnode = h(
           )
         );
 
-        // updateElement(app, newVnode, vnode);
+        updateElement(app, newVnode, vnode);
         // or
-        app.replaceChild(createElement(newVnode), app.firstChild);
+        // app.replaceChild(createElement(newVnode), app.firstChild);
       } },
     'Update'
   )
